@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AlertMessage"
+            android:parentActivityName=".MainActivity"
+            android:label="Alert!!!">
+        </activity>
+        <activity android:name=".ListAlerts"
+            android:parentActivityName=".AlertMessage"
+            android:label="List of Danger Zones">
+        </activity>
     </application>
 
 </manifest>
