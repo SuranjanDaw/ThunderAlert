@@ -14,22 +14,24 @@
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello West Bengal"
+        android:text="West Bengal"
         android:padding="8dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="18dp"
         android:textColor="@color/colorPrimaryDark"/>
     <TextView
+        android:paddingLeft="8dp"
         android:id="@+id/dept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DEPARTMENT OF GEOLOGICAL SCIENCE AND WEATHER"
+        android:text="THUNDER SHIELD SYSTEM"
         android:layout_below="@+id/welcome"
         android:layout_centerHorizontal="true"
         android:textSize="25dp"
         android:textColor="@color/colorPrimary"/>
     <TextView
+        android:id="@+id/alert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ELECTROCUTION ALERT"
@@ -37,14 +39,24 @@
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:textColor="#6d4c41"/>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo Notify"
+        android:onClick="notify"/>
 
     <ImageButton
+        android:id="@+id/logo"
         android:onClick="nextPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/alert"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:text="logo"
-        android:src="@drawable/thunder"/>
+        android:background="#0000"
+        android:src="@drawable/th123"/>
 
 </RelativeLayout>
