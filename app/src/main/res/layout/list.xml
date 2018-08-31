@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:titleTextColor="@color/colorAccent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+    </android.support.v7.widget.Toolbar>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,24 +44,24 @@
         android:orientation="horizontal"
         android:padding="8dp">
         <TextView
-            android:id="@+id/South24locationId"
+            android:id="@+id/highDanger"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="South 24 Pargana"
+            android:text=""
             android:layout_weight="1"
             android:textSize="18dp"/>
         <TextView
-            android:id="@+id/South24timeId"
+            android:id="@+id/highDangerTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="12:40PM"
+            android:text=""
             android:layout_weight="1"
             android:textSize="18dp"/>
         <TextView
-            android:id="@+id/South24intensityId"
+            android:id="@+id/highDangerIntensity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HIGH"
+            android:text=""
             android:layout_weight="1"
             android:textSize="18dp"
             android:textColor="#d50000"/>
@@ -61,49 +72,27 @@
         android:orientation="horizontal"
         android:padding="8dp">
         <TextView
+            android:id="@+id/mediumDanger"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="North 24 Parganas"
+            android:text=""
             android:layout_weight="1"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/mediumDangerTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="11:30AM"
+            android:text=""
             android:layout_weight="1"
             android:textSize="18dp"/>
         <TextView
+            android:id="@+id/mediumDangerIntensity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Medium"
+            android:text=""
             android:layout_weight="1"
             android:textSize="18dp"
             android:textColor="#ffa726"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Howrah"
-            android:layout_weight="1"
-            android:textSize="18dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3:00PM"
-            android:layout_weight="1"
-            android:textSize="18dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Low"
-            android:layout_weight="1"
-            android:textSize="18dp"
-            android:textColor="#c0ca33"/>
     </LinearLayout>
 
 </LinearLayout>

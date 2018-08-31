@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "870588793646",
+    "firebase_url": "https://thunderalert-2ab53.firebaseio.com",
+    "project_id": "thunderalert-2ab53",
+    "storage_bucket": "thunderalert-2ab53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870588793646:android:4f741ad309605163",
+        "android_client_info": {
+          "package_name": "com.example.android.thunderalert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870588793646-b13605ksibknqfqrvh7pp7steddhda73.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.thunderalert",
+            "certificate_hash": "6c7bf4b927a7bf51dc7b08b1405e8b0b7547cb17"
+          }
+        },
+        {
+          "client_id": "870588793646-tkmar811mrikvdoan8rb567rogrhh8a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOcX9JxwZ_x7c1boCGGCk3kRgFWTxyt3E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870588793646-tkmar811mrikvdoan8rb567rogrhh8a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+
+}

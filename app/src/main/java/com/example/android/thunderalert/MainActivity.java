@@ -5,35 +5,74 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int NOTIFICATION_ID=03;
-
+    DrawerLayout mDrawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_nav_activity);
+        String msg[]=new String[3];
+        if(getIntent().getExtras()!=null  ){
+            Log.d("aa","in");
+            for (String key: getIntent().getExtras().keySet()){
+                if(key.equals("location")) {
+
+                    msg[0] = getIntent().getExtras().getString(key);
+                    Log.d("aa",msg[0]+"1");
+                }
+                else if(key.equals("time")) {
+                    msg[1] = getIntent().getExtras().getString(key);
+                    Log.d("aa",msg[1]+"2");
+                }
+                else if(key.equals("priority")){
+                    msg[2]=getIntent().getExtras().getString(key);
+                    Log.d("aa",msg[2]+"3");
+                }
+
+            }
+            Intent i=new Intent(this,ListAlerts.class);
+            i.putExtra("abc",msg);
+            startActivity(i);
+        }
+        else{
+
+            Log.d("aa","main in");
+            setContentView(R.layout.main_nav_activity);}
+        //getSupportActionBar().hide();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+
+
+    }
+
     public void nextPage(View view){
         Intent i= new Intent(this,AlertMessage.class);
         startActivity(i);
     }
-    public void notify(View v){
-        Intent i2= new Intent(this,ListAlerts.class);
-        PendingIntent p= PendingIntent.getActivity(this, 0, i2, PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, "abc");
-        mBuilder.addAction(R.drawable.th123,"See Details",p);
-        mBuilder.setSmallIcon(R.drawable.th123);
-        mBuilder.setContentTitle("West Bengal Thunder Shield System");
-        mBuilder.setContentText("Warning:Danger of Thunder Strike.");
-        mBuilder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        mBuilder.setAutoCancel(true);
-        mBuilder.setDefaults(Notification.DEFAULT_SOUND);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(NOTIFICATION_ID, mBuilder.build());
 
-    }
 }
